@@ -170,7 +170,7 @@ def _create_cm_boxlabels(cm, percentage=True):
     blanks = ['' for i in range(cm.size)]
 
     if len(cm)==2:
-        group_labels = ["TP\n", "FP\n", "FN\n", "TN\n"]
+        group_labels = ["TN\n", "FP\n", "FN\n", "TP\n"]
     else:
         group_labels = blanks
 
