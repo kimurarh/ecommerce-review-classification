@@ -237,12 +237,12 @@ def evaluate_model(model,
     """
 
     # Model training
-    model_name = str(model).replace("()", "")
+    model_name = re.sub(r'\([^)]*\)', '', str(model))
     model.fit(X_train, y_train)
 
     # Creating plot data (confusion matrix, boxlabels and summary text)
     plot_data = {'train': {}, 'valid': {}}
-    plot_data['train']['cm'] = confusion_matrix(y_train, model.predict(X_train)) 
+    plot_data['train']['cm'] = confusion_matrix(y_train, model.predict(X_train))
     plot_data['valid']['cm'] = confusion_matrix(y_valid, model.predict(X_valid))
     for split in ["train", "valid"]:
         plot_data[split]['boxlabels'] = _create_cm_boxlabels(plot_data[split]['cm'], percentages)
