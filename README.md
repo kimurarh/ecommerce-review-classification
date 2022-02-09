@@ -35,21 +35,43 @@ The following technologies were used in this project:
     ├── 0-Exploratory-Data-Analysis.ipynb
     ├── 1-Text-Preprocessing.ipynb
     ├── 2-Vectorization-Methods-and-Classification.ipynb
-    ├── utils.py                                            # Utility functions    
+    ├── utils.py                                            # Utility functions
+    ├── enviroment.yml                                      # Conda environment
+    ├── requirements.txt                                    # List of requirements
     └── README.md                                           # Documentation
 
 ## How to Use
-Create the conda environment from the environment.yml file available in this repository:
+
+Here, we list two possible ways to run this project: `docker` or `conda`
+
+### 1) Docker Instructions
+- Build the docker image:
+```
+docker build -t nlp-project .
+```
+
+- Create a container from the docker image and start the container:
+```
+docker run -t -p 8888:8888 nlp-project
+```
+
+- Use the URL that will appear in your terminal to open the `jupyter` application in your browser;
+- Select the `notebook` (`.ipynb` file) you want to execute (If this is your first time running the project, please follow the notebook numbering order).
+
+### 2) Conda Environment Instructions
+- Create the conda environment from the `environment.yml` file available in this repository:
 ```
 conda env create --name <ENVIRONMENT_NAME> -f environment.yml
 ```
-Activate the conda environment:
+
+- Activate the conda environment:
 ```
 conda activate <ENVIRONMENT_NAME>
 ```
-Launch jupyter notebook:
+
+- Launch jupyter notebook:
 ```
 jupyter notebook
 ```
 - The `jupyter` application will run in your default browser;
-- Select the `notebook` (`.ipynb` file) you want to execute.
+- Select the `notebook` (`.ipynb` file) you want to execute (If this is your first time running the project, please follow the notebook numbering order).
